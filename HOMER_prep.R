@@ -39,9 +39,9 @@ cluster.gr.not.sig <- makeGRangesFromDataFrame(cluster.df.not.sig,
                                                           strand.field="strand" )
 
 # Get genome
-txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene # annotation database of mouse genome
+txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene # annotation database of genome
 exons.by.transcript.id <- GenomicFeatures::exonsBy(txdb, by=("tx"), use.names = TRUE) # Group exons by transcript ID
-genome <- BSgenome.Hsapiens.UCSC.hg19 # mouse genome
+genome <- BSgenome.Hsapiens.UCSC.hg19 # genome
 
 # Get sequence based on grange coordinates
 prepare.homer.input <- function(cluster.gr, cluster.df) {
